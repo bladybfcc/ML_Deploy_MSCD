@@ -7,4 +7,8 @@ pydantic>=1.10.4,<1.12.0
 typing_extensions>=4.2.0,<5.0.0
 loguru>=0.5.3,<1.0.0
 # fetched from gemfury
+<<<<<<< HEAD
 tid-regression-model==3.2.0
+=======
+tid-regression-model==3.2.0
+>>>>>>> 5bb52f182787a47c260ff543f7eaa30ca9d59106
