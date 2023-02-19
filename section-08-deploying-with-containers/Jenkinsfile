@@ -12,6 +12,8 @@ pipeline{
             steps{                
                 sh "python section-08-deploying-with-containers/hello.py"                
                 sh """
+                "echo "alias python='python3.9'" >> .bashrc"
+                "source .bashrc"
                 python --version
                 python ./test.py
                 """
