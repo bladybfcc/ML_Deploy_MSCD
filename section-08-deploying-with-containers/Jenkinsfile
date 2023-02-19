@@ -11,6 +11,10 @@ pipeline{
         stage('Hello'){
             steps{                
                 sh "python section-08-deploying-with-containers/hello.py"                
+                sh """
+                python --version
+                python ./test.py
+                """
             }
         }
         
