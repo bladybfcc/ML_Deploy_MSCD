@@ -28,11 +28,7 @@ pipeline{
 
         stage('Deploying to prod'){
             steps{
-                script{
-                    def remote = [:]
-                    remote.name = 'TestEnv'
-                    remote.host = '10.100.100.100'                
-                }
+                mvn 'clean install'
             }
         }
     }
