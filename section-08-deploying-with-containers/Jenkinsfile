@@ -21,14 +21,17 @@ pipeline{
                 script{
                     sh "echo "alias python='python3.9'" >> .bashrc"
                     sh "source .bashrc"
-                    sh "python -m tox -c section-05-production-model-package/tox.ini -e train"
+                    sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
                 }
             }
         }
 
-        stage('Deploying to prod'){
-            steps{
-                echo "Deploying to prod env..."
+        stage('Deployment to prod'){
+        when { triggeredBy 'SCMTrigger'}
+            stage('Deploy to TestEnvironment'){
+                def remote = [:]
+                remote.name = 'TestEnv'
+                remote.host = '10.100.100.100'
             }
         }
     }
