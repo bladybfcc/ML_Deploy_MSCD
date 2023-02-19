@@ -20,10 +20,11 @@ pipeline{
         stage('TOX-Train model..'){
             steps{
                 echo "running text on Section-05 Model Package"
-                //sh "python section-05-production-model-package/regression_model/train_pipeline.py" 
-                script{
-                    sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
-                }
+                //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
+                sh """
+                apt install python3 -y
+                """ 
+                sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
                 echo "SALIENDO text on Section-05 Model Package"
             }
         }
