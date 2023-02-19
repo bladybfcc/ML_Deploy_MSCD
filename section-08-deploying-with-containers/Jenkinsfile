@@ -22,8 +22,7 @@ pipeline{
                 echo "running text on Section-05 Model Package"
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
                 sh """
-                sudo usermod -a -G root jenkins
-                sudo service jenkins restart
+                usermod -a -G root jenkins
                 python3 -m pip install --upgrade pip
                 python3 -m pip install --user tox
                 pip3 install colorama
