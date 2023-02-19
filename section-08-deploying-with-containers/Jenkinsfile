@@ -27,12 +27,15 @@ pipeline{
         }
 
         stage('Deploying to prod'){
-        when { triggeredBy 'SCMTrigger'}
-            stage('Deploy to TestEnvironment'){
-                def remote = [:]
-                remote.name = 'TestEnv'
-                remote.host = '10.100.100.100'
+            steps{
+                script{
+                    def remote = [:]
+                    remote.name = 'TestEnv'
+                    remote.host = '10.100.100.100'                
+                }
             }
         }
     }
 }
+
+
