@@ -25,6 +25,7 @@ pipeline{
                 python3 -m pip install --upgrade pip
                 python3 -m pip install --user tox
                 pip3 install colorama
+                pip3 install appdirs
                 pip3 install -U pytest
                 pip3 install -U virtualenv
                 """ 
