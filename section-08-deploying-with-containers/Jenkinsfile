@@ -22,8 +22,6 @@ pipeline{
                 echo "running text on Section-05 Model Package"
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py" 
                 script{
-                    sh "echo "alias python='python3.9'" >> .bashrc"
-                    sh "source .bashrc"
                     sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
                 }
                 echo "SALIENDO text on Section-05 Model Package"
