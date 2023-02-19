@@ -22,6 +22,7 @@ pipeline{
                 echo "running text on Section-05 Model Package"
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
                 sh """
+                python3 -m pip install --upgrade pip
                 pip3 install -U pytest
                 """ 
                 sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
