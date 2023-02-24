@@ -27,7 +27,6 @@ pipeline{
                 pip3 install colorama
                 pip3 install appdirs
                 pip3 install -U pytest
-                pip3 install -U virtualenv
                 """ 
                 sh "python3 -m tox -c section-05-production-model-package/tox.ini -e train"
                 echo "SALIENDO text on Section-05 Model Package"
