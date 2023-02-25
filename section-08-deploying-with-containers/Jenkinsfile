@@ -23,7 +23,7 @@ pipeline{
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
                 sh """
                 python3 -m virtualenv venv 
-                source env/bin/activate
+                source venv/bin/activate
                 python3 -m pip install --upgrade pip
                 python3 -m pip install --user tox
                 pip3 install colorama
