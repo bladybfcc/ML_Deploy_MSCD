@@ -23,12 +23,12 @@ pipeline{
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
                 sh """
                 python3 -m virtualenv venv 
-                source /var/jenkins_home/workspace/ML-git_01/venv/bin/activate
+                source venv/bin/activate
                 python3 -m pip install --upgrade pip
                 python3 -m pip install --user tox
-                pip3 install colorama
-                pip3 install appdirs
-                pip3 install -U pytest
+                python3 -m install colorama
+                python3 -m install appdirs
+                python3 -m install -U pytest
                 """ 
                 sh "python3 -m tox -c section-05-production-model-package/tox.ini -e test_package"
                 echo "SALIENDO text on Section-05 Model Package"
