@@ -22,10 +22,9 @@ pipeline{
                 echo "running text on Section-05 Model Package"
                 //sh "python section-05-production-model-package/regression_model/train_pipeline.py"
                 sh """
-                usermod -a -G docker jenkins
-                usermod -a -G docker user
+                bash
                 python3 -m virtualenv venv 
-                source venv/bin/activate
+                source ~/venv/bin/activate
                 python3 -m pip install --upgrade pip
                 python3 -m pip install --user tox
                 python3 -m install colorama
